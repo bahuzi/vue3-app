@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  app:
+    build:
+      context: .
+    image: vue3-app-image
+    container_name: vue3-app-container
+    restart: unless-stopped
+    tty: true
+    working_dir: /code
+    volumes:
+      - ./:/code
+    ports:
+      - "8080:8080"
